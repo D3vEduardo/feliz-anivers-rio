@@ -17,7 +17,7 @@
         width: 100%;
         height: 100dvh;
         overflow: hidden;
-        background: linear-gradient(100deg, #ffb1cb, #deb6ff);
+        background: linear-gradient(100deg, #ffb1cb, #deb6ff); /* Gradiente claro de azul e rosa */
         background-size: 100vw;
         display: flex;
         flex-direction: column;
@@ -39,13 +39,16 @@
         to { border: transparent; }
       }
 
-      span {
+      #typing {
         white-space: nowrap;
         overflow: hidden;
         width: 0;
         border-right: 3.5px solid #3f51b5; /* Cor do cursor do efeito de digitação */
         display: inline-block;
         animation: typing 2.5s steps(20) forwards, blink infinite 1s;
+      }
+
+      .gradient-text {
         background: linear-gradient(135deg, #ff4081, #703fb5); /* Gradiente rosa e azul */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -56,6 +59,12 @@
         line-height: 1.5;
         margin-top: 20px;
         font-size: 1.35em;
+      }
+
+      h2 .gradient-text {
+        background: linear-gradient(135deg, #ff4081, #703fb5); /* Gradiente rosa e azul */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .container {
@@ -91,12 +100,12 @@
 </head>
 <body>
     <div class="container">
-        <h1><span id="typing">Feliz aniversário, mamãe!</span></h1>
+        <h1><span class="gradient-text" id="typing">Feliz aniversário, mamãe!</span></h1>
         <h2>
             Espero que possamos comemorar esse dia por vários e vários anos. Te
-            desejo muitos anos de vida, saúde, alegria, sucesso, prosperidade e
-            muito mais. Quero dizer que sou grato por tudo que a senhora fez e faz
-            por nossa família. Te amamos.
+            desejo muitos anos de <span class="gradient-text">vida</span>, <span class="gradient-text">saúde</span>, <span class="gradient-text">alegria</span>, <span class="gradient-text">sucesso</span>, <span class="gradient-text">prosperidade</span> e
+            muito mais. Quero dizer que sou <span class="gradient-text">grato</span> por tudo que a senhora fez e faz
+            por nossa família. <span class="gradient-text">Te amamos.</span>
         </h2>
     </div>
     <script>
