@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Aniversário, Mamãe!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap");
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(100deg, #ffb1cb, #deb6ff); /* Um tom claro de azul para o fundo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        font-weight: 900;
+      }
+
+      @keyframes typing {
+        to { width: 14em; }
+      }
+
+      @keyframes blink {
+        to { border: transparent; }
+      }
+
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        border-right: 3.5px solid #3f51b5; /* Cor do cursor do efeito de digitação */
+        display: inline-block;
+        animation: typing 2.5s steps(20) forwards, blink infinite 1s;
+        background: linear-gradient(135deg, #ff4081, #703fb5); /* Gradiente rosa e azul */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      h2 {
+        color: #ff4081; /* Cor rosa que combina com o gradiente */
+        line-height: 1.5;
+        margin-top: 20px;
+        font-size: 1.35em;
+      }
+
+      .container {
+        text-align: center;
+        width: 80%;
+        max-width: 800px;
+        position: relative;
+        z-index: 10; /* Garantir que o container fique acima dos confetes */
+        margin: 10vh auto;
+        padding: 10px;
+        background-color: #ffffff; /* Fundo branco semitransparente */
+        border: solid 2px #3f51b5; /* Cor da borda azul */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      @keyframes confetti {
+        from {
+          transform: translateY(-100vh);
+        }
+        to {
+          transform: translateY(100vh);
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span id="typing">Feliz aniversário, mamãe!</span></h1>
+        <h2>
+            Espero que possamos comemorar esse dia por vários e vários anos. Te
+            desejo muitos anos de vida, saúde, alegria, sucesso, prosperidade e
+            muito mais. Quero dizer que sou grato por tudo que a senhora fez e faz
+            por nossa família. Te amamos.
+        </h2>
+    </div>
+    <script>
+        const confettiColors = ['#ff80ab', '#ba68c8', '#64b5f6', '#4dd0e1', '#81c784'];
+
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.style.position = "absolute";
+            confetti.style.width = "10px";
+            confetti.style.height = "10px";
+            confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            confetti.style.borderRadius = "50%";
+            confetti.style.top = Math.random() * 100 + "vh";
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.opacity = Math.random();
+            confetti.style.zIndex = -1; /* Confetes atrás do container */
+            confetti.style.animation = `confetti ${Math.random() * 5 + 5}s linear infinite`;
+            document.body.appendChild(confetti);
+
+            confetti.addEventListener("animationend", () => confetti.remove());
+        }
+
+        setInterval(createConfetti, 50); // Ajuste o intervalo conforme necessário
+    </script>
+</body>
+</html>
