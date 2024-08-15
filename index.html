@@ -32,7 +32,7 @@
       }
 
       @keyframes typing {
-        to { width: 14em; }
+        to { width: 10em; }
       }
 
       @keyframes blink {
@@ -100,7 +100,7 @@
 </head>
 <body>
     <div class="container">
-        <h1><span class="gradient-text" id="typing">Feliz aniversário, mamãe!</span></h1>
+        <h1><span class="gradient-text" id="typing">Feliz aniversário!</span></h1>
         <h2>
             Espero que possamos comemorar esse dia por vários e vários anos. Te
             desejo muitos anos de <span class="gradient-text">vida</span>, <span class="gradient-text">saúde</span>, <span class="gradient-text">alegria</span>, <span class="gradient-text">sucesso</span>, <span class="gradient-text">prosperidade</span> e
@@ -128,7 +128,7 @@
             confetti.addEventListener("animationend", () => confetti.remove());
         }
 
-        setInterval(createConfetti, 100); // Ajuste o intervalo conforme necessário
+        for (let i = 0; i < 150; i++) createConfetti();
     </script>
 </body>
 </html>
